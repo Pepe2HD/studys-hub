@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasec - Editar Professor</title>
+    <link rel="stylesheet" href="/css/admin/edit.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <img src="/images/logo.jpeg" alt="Logo" class="logo">
+        <nav>
+            <a href="homeAdm.html">Início</a>
+            <a href="prof.html">Professores</a>
+            <a href="curso.html">Cursos</a>
+            <a href="disciplina.html">Disciplinas</a>
+            <a href="sala.html">Salas</a>
+            <a href="/index.html" class="sair">Sair</a>
+            <a href="#" id="logoutBtn" class="logout">Logout</a>
+        </nav>
+    </div>
+
+    <header>
+        <button class="menu-btn" id="menu-btn">☰</button>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="form-container">
+                <div class="title">
+                    <h1>Editando professor</h1>
+                </div>
+
+                <div class="form-box">
+                    <input type="text" id="nome" placeholder="Carregando nome...">
+                    <input type="email" id="email" placeholder="Carregando email...">
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-voltar" onclick="window.location.href='/html/admin/prof.html'">Voltar</button>
+                    <button class="btn-cadastrar" id="btnCadastrar" type="button">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <div class="popup-icon"></div>
+            <h2 id="popup-title">Título</h2>
+            <p id="popup-text">Mensagem do popup</p>
+            <button id="popup-close" class="popup-btn">OK</button>
+        </div>
+    </div>
+    <script type="module" src="/js/middlewares/adminAuthGuard.js"></script>
+    <script src="/js/admin/editProf.js"></script>
+</body>
+
+</html>
+
+
+

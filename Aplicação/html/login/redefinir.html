@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6fa3dd, #3f6ca8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(#ffffff22 2px, transparent 2px);
+            background-size: 50px 50px;
+            animation: moveStars 30s linear infinite;
+            z-index: -1;
+        }
+
+        .container {
+            background: #ffffff22;
+            padding: 40px 50px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 20px #00000040;
+            width: 380px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #e8f2ff;
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: none;
+            font-size: 18px;
+            background: #ffffffaa;
+            outline: none;
+            color: #2b4e73;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            background: #ffffffdd;
+            box-shadow: 0 0 10px #00000040;
+        }
+
+        input::placeholder {
+            color: #2b4e7366;
+        }
+        
+        #alert-erro {
+            display:flex;
+            color:#c00;
+            font-size:18px;
+            margin-left: 10px;
+            margin-top:0;
+            margin-bottom:20px;
+            text-align:left;
+        }
+        
+        button {
+            width: 70%;
+            padding: 15px;
+            font-size: 22px;
+            background: #2b4e73;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1c3550;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 85%;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            input {
+                width: 95%;
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            button {
+                width: 80%;
+                padding: 12px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            input {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button {
+                width: 90%;
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Nova Senha</h1>
+        <p>Escolha uma nova senha para continuar</p>
+
+        <input type="password" id="senha1" placeholder="Nova senha">
+        <input type="password" id="senha2" placeholder="Repita a nova senha">
+        <p id="alert-erro"></p>
+        <button id="prosseguir">Prosseguir</button>
+
+    </div>
+    
+    <script src="/js/login/reset-pass.js"></script>
+</body>
+</html>
+
+
+
+

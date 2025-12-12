@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasec - Curso</title>
+    <link rel="stylesheet" href="/css/admin/curso.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <img src="/images/logo.jpeg" alt="Logo" class="logo">
+        <nav>
+            <a href="homeAdm.html">Início</a>
+            <a href="prof.html">Professores</a>
+            <a href="curso.html">Cursos</a>
+            <a href="disciplina.html">Disciplinas</a>
+            <a href="sala.html">Salas</a>
+            <a href="/index.html" class="sair">Sair</a>
+            <a href="#" id="logoutBtn" class="logout">Logout</a>
+        </nav>
+    </div>
+
+    <header>
+        <button class="menu-btn" id="menu-btn">☰</button>
+    </header>
+
+    <div id="modal" class="modal">
+        <div class="modalContent">
+            <div class="modal-content">
+                <input type="text" id="modalSearch" placeholder="Pesquisar...">
+                <ul id="modalList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modalRemove" role="dialog" aria-modal="true">
+        <div class="modalContentRemove">
+            <div class="modal-confirm-box">
+                <p id="confirmText"></p>
+                <div class="modal-buttons">
+                    <button id="confirmNo">Voltar</button>
+                    <button id="confirmYes">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="content">
+            <div class="curso-container">
+                <div class="search-bar">
+                    <button id="searchBtn">🔍</button>
+                    <input type="text" placeholder="Pesquisar curso..." id="searchInput">
+                </div>
+
+                <div class="filters">
+                    <button id="btnDisciplinas">Disciplinas</button>
+                </div>
+                <div class="filtersActives">
+                    <div id="activeFilters" class="active-filters"></div>
+                </div>
+
+                <div class="cursos-box">
+                    <div class="cursos-header">
+                        <h3>Cursos</h3>
+                    </div>
+                    <ul class="curso-list" id="curso-list"></ul>
+                </div>
+
+                <div class="createCurso">
+                    <div class="text">
+                        <div class="title">Cadastre um curso</div>
+                        <div class="subtitle">Inclua um curso e configure suas atribuições na faculdade.</div>
+                    </div>
+                    <div class="button">
+                        <a href="/html/admin/createCurso.html">
+                            <button>Cadastre-aqui</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/js/middlewares/adminAuthGuard.js"></script>
+    <script src="/js/admin/curso.js"></script>
+</body>
+
+
+</html>
+
+
+
+

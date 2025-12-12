@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasec - Atualizando Curso</title>
+    <link rel="stylesheet" href="/css/admin/edit.css">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <img src="/images/logo.jpeg" alt="Logo" class="logo">
+        <nav>
+            <a href="homeAdm.html">Início</a>
+            <a href="prof.html">Professores</a>
+            <a href="curso.html">Cursos</a>
+            <a href="disciplina.html">Disciplinas</a>
+            <a href="sala.html">Salas</a>
+            <a href="/index.html" class="sair">Sair</a>
+            <a href="#" id="logoutBtn" class="logout">Logout</a>
+        </nav>
+    </div>
+
+    <header>
+        <button class="menu-btn" id="menu-btn">☰</button>
+    </header>
+
+    <div id="modalVincular" class="modal" style="display: none;">
+        <div class="modal-vincular-content">
+            <span class="close-vincular" id="closeVincular">&times;</span>
+            <div class="vincular-header">
+                <h3 id="tituloVincular">Gerenciar Disciplinas</h3>
+            </div>
+
+            <div class="vincular-controls">
+                <div class="vincular-buttons">
+                    <div class="search-disc">
+                        <label for="searchDisciplina">Pesquisar disciplina:</label>
+                        <input type="text" id="searchDisciplina" placeholder="Digite para filtrar...">
+                    </div>
+                    <div class="select-disc">
+                        <div class="select-custom" id="disciplinaSelect">
+                            <div class="select-trigger">Selecione uma disciplina...</div>
+                            <div class="select-options"></div>
+                        </div>
+                        <button id="btnAdicionarVinculo" class="btn-add-vinculo">Adicionar</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <h4>Disciplinas do Curso:</h4>
+            <ul id="listaVinculadas" class="lista-vinculadas">
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="content">
+            <div class="form-container">
+                <div class="title">
+                    <h1>Atualizando curso</h1>
+                </div>
+
+                <div class="form-box">
+                    <input type="text" id="nome" name="nome" placeholder="Nome">
+                    <input type="number" id="hours" name="hours" placeholder="Carga horaria total">
+                    <div class="buttons-form">
+                        <button class="abrirModalVincular" onclick="abrirModalVincular()">
+                            Ver disciplinas
+                        </button>
+                        <button class="abrirQuadroHorario" onclick="abrirQuadroHorario()">
+                            Ver quadro horario
+                        </button>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-voltar" onclick="window.history.back()">Voltar</button>
+                    <button class="btn-cadastrar" id="btnAtualizar" type="button">Atualizar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <div class="popup-icon"></div>
+            <h2 id="popup-title">Título</h2>
+            <p id="popup-text">Mensagem do popup</p>
+            <button id="popup-close" class="popup-btn">OK</button>
+            <button id="popup-confirm" class="popup-btn">SIM</button>
+        </div>
+    </div>
+    
+    <script type="module" src="/js/middlewares/adminAuthGuard.js"></script>
+    <script src="/js/admin/editCurso.js"></script>
+</body>
+
+</html>
+
+
+
