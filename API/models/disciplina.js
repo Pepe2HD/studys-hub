@@ -1,0 +1,46 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Disciplina extends Model {
+    static associate(models) {
+      this.belongsTo(models.Sala, {
+        foreignKey: 'id_sala',
+        as: 'sala',
+      }),
+      this.hasMany(models.Horario, {
+        foreignKey: 'id_disciplina' ,
+        as: 'horario',
+      }),
+      this.belongsToMany(models.Curso, {
+        through: 'curso_disciplina',
+        foreignKey: 'id_disciplina',
+        otherKey: 'id_curso',
+        as: 'curso',
+        timestamps: false
+      });
+    }
+  }
+  Disciplina.init({
+    id_disciplina: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    } ,
+    nome: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    tipo: {
+      type: DataTypes.STRING(50),
+      allowNull: true,
+    },
+  }, {
+    sequelize,
+    modelName: 'Disciplina',
+    tableName: 'disciplina',
+    timestamps: false,
+  });
+  return Disciplina;
+};

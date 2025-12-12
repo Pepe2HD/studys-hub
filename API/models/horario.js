@@ -1,0 +1,47 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Horario extends Model {
+    static associate(models) {
+      this.belongsTo(models.Curso, {
+        foreignKey: 'id_curso',
+        as: 'curso',
+      }),
+      this.belongsTo(models.Professor, {
+        foreignKey: 'id_professor',
+        as: 'professor',
+      }),
+      this.belongsTo(models.Disciplina, {
+        foreignKey: 'id_disciplina',
+        as: 'disciplina',
+      }),
+      this.belongsTo(models.Turno, {
+        foreignKey: 'id_turno',
+        as: 'turno',
+      }),
+      this.belongsTo(models.Periodo, {
+        foreignKey: 'id_periodo',
+        as: 'periodo',
+      })
+    }
+  }
+  Horario.init({
+    id_horario: {
+      type:DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    dia_da_semana: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+    },
+  }, {
+    sequelize,
+    modelName: 'Horario',
+    tableName: 'horario',
+    timestamps: false,
+  });
+  return Horario;
+};
